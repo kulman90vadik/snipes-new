@@ -6,9 +6,21 @@ import Product from "@/components/Product";
 import Layout from "@/components/Layout";
 import { useRouter } from "next/router";
 
+
+// type Props = {
+//   name: string;
+// }    
+
+// export async function generateMetadata({name}: Props) {
+// return {
+//   // title: name.toLowerCase()
+//   title: name
+// }
+// }
+
 // categorie 
 export const getStaticPaths:GetStaticPaths = async () => {
-  const { data } = await axios(`https://api.escuelajs.co/api/v1/categories`)
+  const { data } = await axios(`${process.env.API_URL_CATEGORIES}`)
   const paths = data.map((item: categorieType) => ({
     params: {categorie: item.name},
     // params: {id: item.id.toString()},
@@ -22,7 +34,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const {categorie} = context.params;
   // console.log(Lname)
 	try {
-		const { data } = await axios(`https://api.escuelajs.co/api/v1/products`)
+		const { data } = await axios(`${process.env.API_URL_PRODUCTS}`)
 		if (!data) {return { notFound: true }}
 		// console.log(name.toLowerCase());
 		return { props: { products: data.filter((obj: productType) => obj.category.name.toLowerCase() === categorie.toLowerCase()) } }

@@ -1,6 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  env: {
+    API_URL_CATEGORIES: 'https://api.escuelajs.co/api/v1/categories',
+    API_URL_PRODUCTS: 'https://api.escuelajs.co/api/v1/products'
+  },
+
+  // basePath: '/red',
+
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/images/:path*',
+  //       destination: 'http://localhost:4200/images/:path*'
+  //     }
+  //   ]
+  // },
+
+  
   images: {
     domains: ['localhost', 'com']
   }

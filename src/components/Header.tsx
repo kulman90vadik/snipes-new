@@ -6,21 +6,6 @@ import Navigation from './Navigation'
 import { FC } from 'react'
 // import { GetStaticProps } from 'next'
 
-// export const getStaticProps:GetStaticProps = async () => {
-//   try {
-//     const { data } = await axios(`${process.env.API_HOST}/dataNavLinks/`);
-// 		console.log({data})
-//     if(!data) {return { notFound: true}}
-//     return {props: {dataNavLinks: data}}
-//   }
-//   catch {
-//     return {props: {dataNavLinks: null}}
-//   }
-// }
-
-// type Props = {
-// 	dataNavLinks: navLinkType[]
-// }
 
 
 
