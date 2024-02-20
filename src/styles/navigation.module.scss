@@ -1,0 +1,29 @@
+
+.navigation {
+  
+}
+
+.list {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+
+.link {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 3px;
+}
+
+.active {
+  transition: all 0.3s ease-in-out;
+  color: #111;
+  border-bottom: 2px solid #111;
+}
